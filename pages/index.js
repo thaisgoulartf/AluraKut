@@ -8,13 +8,26 @@ import styled from 'styled-components'
 const Box = styled.div`
    background: #FFFFFF;
    border-radius: 8px;
-   font-family: sans-serif;
 `
+
+const MainGrid = styled.main`
+   display: grid;
+   grid-gap: 10px;
+   padding: 16px;
+   @media (min-width:860px){
+     grid-template-areas: "profileArea welcomeArea profileRelationsArea";
+     grid-template-columns: 160px 618px 312px;
+
+   }
+`
+
 
 export default function Home() {
   return (
-  <Box>
-    Amigos
-  </Box>
+  <MainGrid>
+    <Box style={{ gridArea: 'profileArea'}}>Amigos</Box>
+    <Box>Amigos</Box>
+    <Box>Amigos</Box>
+  </MainGrid>
   )
 }
